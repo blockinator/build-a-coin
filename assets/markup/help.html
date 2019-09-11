@@ -1,0 +1,55 @@
+<h1>Help</h1>
+
+<a name="i-get-bad-value-when-designing-my-coin" href="#i-get-bad-value-when-designing-my-coin"><h3>I get 'bad value' when designing my coin.</h3></a>
+<p>
+Build-a-Coin tries to cut down on compile errors by rejecting inputs that would
+break your new coin.  Limitations on input values are as follows:
+<ul>
+    <li>All strings must contain only
+    <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII printable characters</a>.</li>
+    <li>All string values must not contain quotes <code>["']</code> nor backslashes
+    <code>[\]</code>.</li>
+    <li>All strings must be no more than 256 bytes long</li>
+    <li>The name and currency code must consist only alphabetical
+    characters <code>[a-zA-Z]</code>.</li>
+    <li>Numeric values must fit into the datatype they will be in your coin's
+    code.  Errors in numeric fields probably mean they're too big or
+    negative.</li>
+    <li>Pubkeys must be 65 bytes expressed in hexadecimal (130 hex digits)</li>
+</ul>
+</p>
+
+<a name="my-coin-wont-compile" href="#my-coin-wont-compile"><h3>My coin won't compile.</h3></a>
+<p>
+Build-a-Coin attempts to always produce correct code.  If you haven't edited
+your code at all and have ruled out a build system misconfiguration, please
+email
+<a href="mailto:info+buildacoin@shick.xyz">info+buildacoin@shick.xyz</a> with the following:
+<ul>
+    <li>your coin's build-a-coin.txt or coin identifier</li>
+    <li>operating system version</li>
+    <li>compiler version</li>
+</ul>
+It is the policy of Build-a-Coin that if a coin compiles on our build platform
+(Debian/gcc), then it is working.  Although Build-a-Coin coins should compile
+anywhere bitcoin can be compiled, we do not guarantee this.
+</p>
+
+<a name="my-coin-doesnt-work-right" href="#my-coin-doesnt-work-right"><h3>My coin doesn't work right.</h3></a>
+<p>
+If you put unreasonable values in, you'll get an unreasonable coin out.
+Build-a-Coin coins have been tested for correctness with reasonable inputs, but
+are not guaranteed to work.  If you believe you've found a bug in Build-a-Coin
+itself, report it to <a href="mailto:info+buildacoin@shick.xyz">info+buildacoin@shick.xyz</a>.
+</p>
+
+<a name="i-dont-know-how-to-compile-my-coin" href="#i-dont-know-how-to-compile-my-coin"><h3>I don't know how to compile my coin.</h3></a>
+<p>
+Build-a-Coin does not provide any support for the compilation process; there
+are many guides freely available that cover this topic.
+</p>
+<p>
+One user has suggested this
+<a href="https://www.youtube.com/watch?v=ENaTmbh8Xuw&t=7m25s">YouTube tutorial series</a>
+for a walk-through of getting your coin up and running.
+</p>

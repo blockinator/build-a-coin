@@ -1,0 +1,91 @@
+<h1>Frequently Asked Questions</h1>
+<p><span class="tinytext">Actually nobody asked these; I wrote them up before I launched the site</span></p>
+
+<a name="what-is-buildacoin" href="#what-is-buildacoin"><h3>What is Build-a-Coin?</h3></a>
+<p>
+Build-a-Coin is a generator of <a href="http://weusecoins.com">Bitcoin</a>-derived cryptocurrencies (BDCs) or "altcoins".
+Given a selection of parameters, Build-a-Coin produces the source code for a new and unique coin.
+</p>
+
+<a name="why-should-i-trust-this-service" href="#why-should-i-trust-this-service"><h3>Why should I trust this service?</h3></a>
+<p>
+You shouldn't.  The simplest check is to download the original source your coin
+was templated from and compare the two.  Carefully consider any differences you
+find.
+</p>
+
+<a name="how-do-i-with-my-new-coin" href="#how-do-i-with-my-new-coin"><h3>How do I . . . with my new coin?</h3></a>
+<p>
+You'll need to set up at least two nodes, connect them with the
+<a href="https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_Calls_list">addnode</a>
+function and start mining.
+</p>
+<p>
+Once you have some stable nodes, you'll probably want to add those nodes' IP
+addresses to the code as bootstrap nodes, otherwise all your users will have to
+addnode you before they can do anything.
+</p>
+<p>
+Beyond those starting pointers, you'll need to look elsewhere for help.
+<a href="https://bitcointalk.org">Bitcoin Talk</a> and the
+<a href="https://en.bitcoin.it/wiki/Main_Page">Bitcoin Wiki</a> are good
+resources.
+</p>
+<p>
+One user has suggested this
+<a href="https://www.youtube.com/watch?v=ENaTmbh8Xuw&t=7m25s">YouTube tutorial series</a>
+for a walk-through of getting your coin up and running.
+</p>
+
+<a name="what-codebase-are-buildacoin-bdcs-based-on" href="#what-codebase-are-buildacoin-bdcs-based-on"><h3>What codebase are Build-a-Coin coins based on?</h3></a>
+<p>
+Currently, all Build-a-Coin coins are derived from <a href="https://github.com/litecoin-project/litecoin/tree/v0.8.5.1">Litecoin 0.8.5.1</a>.
+</p>
+
+<a name="why-litecoin" href="#why-litecoin"><h3>Why Litecoin?</h3></a>
+<p>
+Litecoin is the most popular basis of manually-derived coins.
+</p>
+
+<a name="what-byte-do-i-use-to-get-my-coins-addresses-to-start-with-a-specific-letter-number" href="#what-byte-do-i-use-to-get-my-coins-addresses-to-start-with-a-specific-letter-number"><h3>What byte do I use to get my coin's addresses to start with a specific letter/number?</h3></a>
+<p>
+Try the second chart <a href="https://en.bitcoin.it/wiki/List_of_address_prefixes">here</a>.
+</p>
+
+<a name="how-is-the-genesis-block-mined-so-fast" href="#how-is-the-genesis-block-mined-so-fast"><h3>How is the genesis block mined so fast?</h3></a>
+<p>
+Build-a-Coin coins differ from bitcoin in that they do not verify the
+<a href="https://en.bitcoin.it/wiki/Proof_of_work">proof of work</a> (PoW) of the genesis block.
+Because the genesis block is hard-coded into the client, no other proof of legitimacy is required, and skipping the genesis block PoW check
+allows coins to be produced on-demand without any initial mining.  Mining of blocks after the genesis block is normal.
+</p>
+
+<a name="who-gets-the-genesis-block-reward" href="#who-gets-the-genesis-block-reward"><h3>Who gets the genesis block reward?</h3></a>
+<p>
+No one.  The public key that the reward of the genesis block is paid to is
+random and the output is therefore unspendable.  Even if a public key with a
+known private key were inserted, all coins including bitcoin itself do not allow
+the reward of the genesis block to be spent.
+</p>
+
+<a name="if-i-enter-the-same-values-will-i-get-the-same-output" href="#if-i-enter-the-same-values-will-i-get-the-same-output"><h3>If I enter the same values will I get the same output?</h3></a>
+<p>
+No.  The genesis block of each coin is based on the time of generation as well a
+random nonce and coinbase output pubkey.  Outside of the genesis block the code
+will be the same, but different genesis block means different currency.
+</p>
+
+<a name="what-are-alert-signing-pubkeys" href="#what-are-alert-signing-pubkeys"><h3>What are alert signing pubkeys?</h3></a>
+<p>
+Bitcoin has a mechanism for warning users about important incidents like the
+<a href="https://en.bitcoin.it/wiki/BIP_50">march 2013 bitcoin fork</a>.
+By default, Build-a-Coin coins have null alert pubkeys so no one may send alerts
+for them.  If you want to be able to alert your coin's users, generate a
+bitcoin-compatible ECDSA keypair or keypairs and use the hex-encoded public
+keys.
+</p>
+
+<a name="can-i-use-a-compressed-pubkey-for-the-alert-keys" href="#can-i-use-a-compressed-pubkey-for-the-alert-keys"><h3>Can I use a compressed pubkey for the alert keys?</h3></a>
+<p>
+No.
+</p>

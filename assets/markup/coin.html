@@ -1,0 +1,21 @@
+{{if .groups}}
+<form name="inputs" method="POST">
+    {{range $index, $inputs := .groups}}
+    {{if $inputs}}
+    <div class="group group{{$index}}">
+        <span class="grouplabel">{{with $first := index $inputs 0}}{{$first.Group}}{{end}}</span>
+        <ul class="inputlist">
+        {{range $inputs}}
+        <li>
+        <input type="text" name="{{.Id}}" value="{{.Default}}"/>
+        <br/>
+        {{.Label}}
+        </li>
+        {{end}}
+        </ul>
+    </div>
+    {{end}}
+    {{end}}
+    <input type="submit" value="Go">
+</form>
+{{end}}

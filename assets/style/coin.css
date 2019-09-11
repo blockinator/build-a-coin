@@ -1,0 +1,61 @@
+.group {
+    padding: 10px;
+    text-align: center;
+    /*border-bottom: 1px solid #000000;*/
+}
+.inputlist {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    width: 100%;
+}
+.inputlist li {
+    text-align: center;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    list-style-type: none;
+}
+.inputlist li input {
+    text-align: center;
+    border: none;
+}
+.grouplabel {
+    font-size: large;
+    font-weight: bold;
+}
+input[type=submit] {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: xx-large;
+}
+.group0 {
+    background-color: #ccf1ff;
+    /*border-top: 1px solid #000000;*/
+}
+.group1 {
+    background-color: #99e4ff;
+}
+.group2 {
+    background-color: #66d6ff;
+}
+.group3 {
+    background-color: #33c9ff;
+}
+.group4 {
+    background-color: #0bf;
+}
+.group5 {
+    background-color: #0096cc;
+}
+.group6 {
+    background-color: #007099;
+}
+.group7 {
+    background-color: #004b66;
+}
+.group8 {
+    background-color: #002533;
+}

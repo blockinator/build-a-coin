@@ -1,0 +1,40 @@
+DROP TABLE IF EXISTS coins CASCADE;
+
+CREATE TABLE coins (
+    id CHAR(32) UNIQUE NOT NULL CHECK ( char_length(id) = 32 ),
+    template_id VARCHAR(32) NOT NULL,
+    template_ver VARCHAR(32) NOT NULL,
+    label VARCHAR(256) NOT NULL CHECK ( char_length(label) <= 256 ),
+    currency_code VARCHAR(256) NOT NULL CHECK ( char_length(currency_code) <= 256 ),
+    addr_id SMALLINT NOT NULL CHECK ( addr_id >= 0 AND addr_id < 256 ),
+    proto_port INTEGER NOT NULL CHECK ( proto_port >= 0 AND proto_port < 65536 ),
+    initial_reward NUMERIC NOT NULL,
+    halving_interval INTEGER NOT NULL,
+    block_time BIGINT NOT NULL,
+    diff_time BIGINT NOT NULL,
+    initial_diff NUMERIC NOT NULL,
+    embed_msg VARCHAR(256) NOT NULL CHECK ( char_length(embed_msg) <= 256 ),
+    subs_gob BYTEA NOT NULL,
+    request_origin VARCHAR(256),
+    request_agent VARCHAR(256),
+    created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+
+    PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS compile_orders CASCADE;
+
+CREATE TABLE compile_orders (
+    id CHAR(32) UNIQUE NOT NULL CHECK ( char_length(id) = 32 ),
+    coin VARCHAR(32) NOT NULL CHECK ( char_length(coin) = 32 ),
+    deposit_addr VARCHAR(34),
+    created TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+    started TIMESTAMP WITH TIME ZONE,
+    ended TIMESTAMP WITH TIME ZONE,
+    deposited NUMERIC NOT NULL DEFAULT 0.0,
+    credited NUMERIC NOT NULL DEFAULT 0.0,
+    status VARCHAR(16) NOT NULL DEFAULT 'requested',
+
+    FOREIGN KEY (coin) REFERENCES coins ON DELETE CASCADE,
+    PRIMARY KEY (id)
+);

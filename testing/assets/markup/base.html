@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.title}}</title>
+        <style type="text/css">
+{{.style}}
+        </style>
+{{.header}}
+    </head>
+    <body>
+        <div id="column">
+            <div class="title">
+                {{.title}}
+            </div>
+        <hr/>
+        <div class="navlinks">
+            <ul>
+                <li><a href="/">build</a></li>
+                <li><a href="/help">help</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </div>
+        {{if .errors}}
+        <div class="errors">
+            <ul>
+            {{range .errors}}
+            <li>{{.}}</li>
+            {{end}}
+            </ul>
+        </div>
+        {{end}}
+{{template "body" .content}}
+        </div>
+    </body>
+</html>

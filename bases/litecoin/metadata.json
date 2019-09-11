@@ -1,0 +1,487 @@
+{
+    "id": "litecoin",
+    "label": "Litecoin",
+    "version": "0.8.5.1-2",
+    "input groups": [
+        "basics",
+        "money supply",
+        "transactions",
+        "blockchain",
+        "governance"
+    ],
+    "user inputs": [
+        {
+            "group": "basics",
+            "id": "name",
+            "label": "coin name",
+            "default": "Bestcoin"
+        },
+        {
+            "group": "basics",
+            "id": "shortname",
+            "label": "currency code",
+            "default": "BST"
+        },
+        {
+            "group": "basics",
+            "id": "versionbyte",
+            "label": "address identifier byte",
+            "default": "0x7f"
+        },
+        {
+            "group": "basics",
+            "id": "testnet versionbyte",
+            "label": "testnet address identifier byte",
+            "default": "0x7e"
+        },
+        {
+            "group": "basics",
+            "id": "p2sh versionbyte",
+            "label": "multisig address identifier byte",
+            "default": "0x7d"
+        },
+        {
+            "group": "basics",
+            "id": "testnet p2sh versionbyte",
+            "label": "testnet multisig address identifier byte",
+            "default": "0x7c"
+        },
+        {
+            "group": "basics",
+            "id": "port",
+            "label": "TCP port",
+            "default": "9333"
+        },
+        {
+            "group": "basics",
+            "id": "testnet port",
+            "label": "testnet TCP port",
+            "default": "19333"
+        },
+        {
+            "group": "basics",
+            "id": "api port",
+            "label": "JSON-RPC TCP port",
+            "default": "9332"
+        },
+        {
+            "group": "basics",
+            "id": "testnet api port",
+            "label": "testnet JSON-RPC TCP port",
+            "default": "19332"
+        },
+        {
+            "group": "blockchain",
+            "id": "block time",
+            "label": "desired seconds between blocks",
+            "default": "150"
+        },
+        {
+            "group": "blockchain",
+            "id": "difficulty",
+            "label": "starting difficulty",
+            "default": "0.000244"
+        },
+        {
+            "group": "blockchain",
+            "id": "retarget window",
+            "label": "desired seconds to difficulty change",
+            "default": "302400"
+        },
+        {
+            "group": "blockchain",
+            "id": "soft block cap",
+            "label": "miner-configurable limit on block size in bytes",
+            "default": "250000"
+        },
+        {
+            "group": "blockchain",
+            "id": "hard block cap",
+            "label": "hard limit on block size in bytes",
+            "default": "1000000"
+        },
+        {
+            "group": "blockchain",
+            "id": "genesis message",
+            "label": "genesis block embedded message",
+            "default": "Another illustrious Build-a-Coin cryptocurrency!"
+        },
+        {
+            "group": "money supply",
+            "id": "initial reward",
+            "label": "initial block reward",
+            "default": "50.0"
+        },
+        {
+            "group": "money supply",
+            "id": "reward halving",
+            "label": "blocks until reward halves",
+            "default": "840000"
+        },
+        {
+            "group": "transactions",
+            "id": "maturity",
+            "label": "blocks before mined coins can be spent",
+            "default": "100"
+        },
+        {
+            "group": "transactions",
+            "id": "soft dust limit",
+            "label": "minimum sendable without dust fee",
+            "default": "0.01"
+        },
+        {
+            "group": "transactions",
+            "id": "hard dust limit",
+            "label": "minimum sendable at all",
+            "default": "0.0001"
+        },
+        {
+            "group": "transactions",
+            "id": "free tx size",
+            "label": "largest tx in bytes without size fee",
+            "default": "10000"
+        },
+        {
+            "group": "governance",
+            "id": "alert key",
+            "label": "network alert signing pubkey",
+            "default": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+            "group": "governance",
+            "id": "testnet alert key",
+            "label": "testnet alert signing pubkey",
+            "default": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        }
+    ],
+    "substitutions": [
+        {
+            "substitution index": 0,
+            "input": "difficulty",
+            "comment": "starting difficulty",
+            "default": "0.000244",
+            "type": "difficulty"
+        },
+        {
+            "substitution index": 1,
+            "comment": "zero fee threshold (tx creation)",
+            "default": "2000000",
+            "type": "int64"
+        },
+        {
+            "substitution index": 2,
+            "comment": "zero fee threshold (tx relay)",
+            "default": "2000000",
+            "type": "int64"
+        },
+        {
+            "substitution index": 3,
+            "input": "name",
+            "comment": "capitalized long coin name",
+            "default": "Bestcoin",
+            "type": "str-alpha"
+        },
+        {
+            "substitution index": 4,
+            "input": "initial reward",
+            "comment": "initial block reward",
+            "default": "50",
+            "type": "coins"
+        },
+        {
+            "substitution index": 5,
+            "input": "reward halving",
+            "comment": "reward halving blocks",
+            "default": "840000",
+            "type": "int32"
+        },
+        {
+            "substitution index": 6,
+            "input": "retarget window",
+            "comment": "difficulty adjustment target timespan",
+            "default": "302400",
+            "type": "int64"
+        },
+        {
+            "substitution index": 7,
+            "input": "block time",
+            "comment": "block target timespan",
+            "default": "150",
+            "type": "int64"
+        },
+        {
+            "substitution index": 8,
+            "dependencies": [ 14, 12, 15, 16 ],
+            "comment": "testnet genesis block hash",
+            "type": "genesis-block-hash"
+        },
+        {
+            "substitution index": 9,
+            "input": "genesis message",
+            "comment": "genesis block coinbase message",
+            "default": "Another illustrious Build-a-Coin cryptocurrency!",
+            "type": "str"
+        },
+        {
+            "substitution index": 10,
+            "comment": "genesis block coinbase output pubkey",
+            "type": "random-pubkey"
+        },
+        {
+            "substitution index": 11,
+            "comment": "genesis block timestamp",
+            "type": "unixtime-current"
+        },
+        {
+            "substitution index": 12,
+            "input": "difficulty",
+            "comment": "genesis block target bits",
+            "default": "0.000244",
+            "type": "difficulty"
+        },
+        {
+            "substitution index": 13,
+            "comment": "genesis block nonce",
+            "type": "random-uint32"
+        },
+        {
+            "substitution index": 14,
+            "comment": "testnet genesis block timestamp",
+            "type": "unixtime-current"
+        },
+        {
+            "substitution index": 15,
+            "comment": "testnet genesis block nonce",
+            "type": "random-uint32"
+        },
+        {
+            "substitution index": 16,
+            "dependencies": [ 4, 9, 10 ],
+            "comment": "genesis block merkle root",
+            "type": "genesis-merkle-root"
+        },
+        {
+            "substitution index": 17,
+            "input": "shortname",
+            "comment": "short coin name",
+            "default": "BST",
+            "type": "str-alpha-upper"
+        },
+        {
+            "substitution index": 18,
+            "input": "testnet port",
+            "comment": "testnet tcp port",
+            "default": "19333",
+            "type": "uint16"
+        },
+        {
+            "substitution index": 19,
+            "input": "port",
+            "comment": "tcp port",
+            "default": "9333",
+            "type": "uint16"
+        },
+        {
+            "substitution index": 20,
+            "input": "name",
+            "comment": "lowercase long name",
+            "default": "bestcoin",
+            "type": "str-alpha-lower"
+        },
+        {
+            "substitution index": 21,
+            "input": "hard block cap",
+            "comment": "hard block size limit",
+            "default": "1000000",
+            "type": "int32"
+        },
+        {
+            "substitution index": 22,
+            "input": "soft block cap",
+            "comment": "soft block size limit",
+            "default": "250000",
+            "type": "int32"
+        },
+        {
+            "substitution index": 23,
+            "comment": "max standard tx size",
+            "default": "MAX_BLOCK_SIZE_GEN/2.5",
+            "type": "literal"
+        },
+        {
+            "substitution index": 24,
+            "comment": "max block sigops",
+            "default": "MAX_BLOCK_SIZE/50",
+            "type": "literal"
+        },
+        {
+            "substitution index": 25,
+            "comment": "max orphan tx in memory",
+            "default": "MAX_BLOCK_SIZE/100",
+            "type": "literal"
+        },
+        {
+            "substitution index": 26,
+            "comment": "max entries in inv message",
+            "default": "50000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 27,
+            "comment": "max blockfile size",
+            "default": "0x8000000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 28,
+            "comment": "blockfile chunk size",
+            "default": "0x1000000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 29,
+            "comment": "undofile chunk size",
+            "default": "0x100000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 30,
+            "input": "soft dust limit",
+            "default": "0.01",
+            "type": "coins"
+        },
+        {
+            "substitution index": 31,
+            "input": "hard dust limit",
+            "default": "0.0001",
+            "type": "coins"
+        },
+        {
+            "substitution index": 32,
+            "dependencies": [ 4, 5 ],
+            "comment": "total number of coins ever",
+            "type": "coins-max"
+        },
+        {
+            "substitution index": 33,
+            "input": "maturity",
+            "comment": "blocks to block maturity",
+            "default": "100",
+            "type": "int32"
+        },
+        {
+            "substitution index": 34,
+            "comment": "minimum free disk space",
+            "default": "52428800",
+            "type": "uint64"
+        },
+        {
+            "substitution index": 35,
+            "input": "free tx size",
+            "comment": "max free tx size",
+            "default": "10000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 36,
+            "comment": "space in block for free txs",
+            "default": "27000",
+            "type": "uint32"
+        },
+        {
+            "substitution index": 37,
+            "comment": "free tx priority threshold",
+            "default": "576 / 250",
+            "type": "literal"
+        },
+        {
+            "substitution index": 38,
+            "comment": "prodnet alert key",
+            "default": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "type": "pubkey"
+        },
+        {
+            "substitution index": 39,
+            "comment": "testnet alert key",
+            "default": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "type": "pubkey"
+        },
+        {
+            "substitution index": 40,
+            "input": "api port",
+            "default": "9332",
+            "type": "uint16"
+        },
+        {
+            "substitution index": 41,
+            "input": "testnet api port",
+            "default": "19332",
+            "type": "uint16"
+        },
+        {
+            "substitution index": 42,
+            "dependencies": [ 32 ],
+            "comment": "API coin max",
+            "type": "double-coins"
+        },
+        {
+            "substitution index": 43,
+            "comment": "max node connections",
+            "default": "125",
+            "type": "int32"
+        },
+        {
+            "substitution index": 44,
+            "input": "versionbyte",
+            "comment": "address version byte",
+            "default": "0x7f",
+            "type": "7bit"
+        },
+        {
+            "substitution index": 45,
+            "input": "p2sh versionbyte",
+            "comment": "p2sh address version byte",
+            "default": "0x7d",
+            "type": "7bit"
+        },
+        {
+            "substitution index": 46,
+            "input": "testnet versionbyte",
+            "comment": "testnet address version byte",
+            "default": "0x7e",
+            "type": "7bit"
+        },
+        {
+            "substitution index": 47,
+            "input": "testnet p2sh versionbyte",
+            "comment": "testnet p2sh address version byte",
+            "default": "0x7c",
+            "type": "7bit"
+        },
+        {
+            "substitution index": 48,
+            "comment": "units per coin",
+            "default": "100000000",
+            "type": "int64"
+        },
+        {
+            "substitution index": 49,
+            "comment": "units per cent",
+            "default": "1000000",
+            "type": "int64"
+        },
+        {
+            "substitution index": 50,
+            "dependencies": [ 11, 12, 13, 16 ],
+            "comment": "genesis block hash",
+            "type": "genesis-block-hash"
+        },
+        {
+            "substitution index": 51,
+            "comment": "unique generated coin id",
+            "default": "00",
+            "type": "literal"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "debug mode": true,
+    "code templates dir": "testing/bases",
+    "assets dir": "testing/assets",
+    "base coins": [
+        "litecoin"
+    ],
+    "database password": "testpw"
+}

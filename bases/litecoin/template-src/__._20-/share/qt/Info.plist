@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>CFBundleIconFile</key>
+	<string>__._20-.icns</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>$VERSION, Copyright © 2009-$YEAR The Bitcoin developers</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$VERSION</string>
+	<key>CFBundleVersion</key>
+	<string>$VERSION</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>__._3--Qt</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.__._20-.__._3--Qt</string>
+        <key>CFBundleURLTypes</key>
+        <array>
+          <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>org.__._20-.__._3-Payment</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+              <string>__._20-</string>
+            </array>
+          </dict>
+        </array>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+</dict>
+</plist>

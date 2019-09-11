@@ -1,0 +1,25 @@
+{
+    "id": "simple",
+    "label": "Simple Base Example",
+    "version": "1.0",
+    "input groups": [
+        "basics"
+    ],
+    "user inputs": [
+        {
+            "group": "basics",
+            "id": "name",
+            "label": "the name of that thing you're making",
+            "default": "roflcopter.com"
+        }
+    ],
+    "substitutions": [
+        {
+            "substitution index": 1138,
+            "input": "name",
+            "comment": "this is a comment",
+            "default": "default.com",
+            "type": "literal"
+        }
+    ]
+}

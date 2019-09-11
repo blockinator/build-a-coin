@@ -1,0 +1,79 @@
+{
+    "id": "letter",
+    "label": "Sample templated letter",
+    "version": "1.0",
+    "input groups": [
+        "basics",
+        "flourishes"
+    ],
+    "user inputs": [
+        {
+            "group": "basics",
+            "id": "to",
+            "label": "recipient of letter",
+            "default": "Sir or madam"
+        },
+        {
+            "group": "basics",
+            "id": "from",
+            "label": "sender of letter",
+            "default": "A friend"
+        },
+        {
+            "group": "basics",
+            "id": "emotion",
+            "label": "how you feel",
+            "default": "delighted"
+        },
+        {
+            "group": "basics",
+            "id": "event",
+            "label": "event the letter is regarding",
+            "default": "your engagement"
+        },
+        {
+            "group": "flourishes",
+            "id": "greeting",
+            "label": "greeting",
+            "default": "Dearest"
+        },
+        {
+            "group": "flourishes",
+            "id": "salutation",
+            "label": "salutation",
+            "default": "Sincerely"
+        }
+    ],
+    "substitutions": [
+        {
+            "substitution index": 0,
+            "input": "to",
+            "type": "literal"
+        },
+        {
+            "substitution index": 1,
+            "input": "from",
+            "type": "literal"
+        },
+        {
+            "substitution index": 2,
+            "input": "emotion",
+            "type": "literal"
+        },
+        {
+            "substitution index": 3,
+            "input": "event",
+            "type": "literal"
+        },
+        {
+            "substitution index": 4,
+            "input": "greeting",
+            "type": "literal"
+        },
+        {
+            "substitution index": 5,
+            "input": "salutation",
+            "type": "literal"
+        }
+    ]
+}
